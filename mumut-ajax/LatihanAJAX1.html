@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script>function loadXMLDoc(){
+		var xmlhttp;
+		if(window.XMLHttpRequest){//code untuk IE7+, FIREFOX, CHOREME, OPERA
+			xmlhttp=new XMLHttpRequest();
+		}else {// code untuk IE6,IE5
+			xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+		}
+			xmlhttp.onreadystatechange=function(){
+				if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+					
+					document.getElementById('nama', 'nim', 'kelas').innerHTML=xmlhttp.responseText;
+				}}
+				xmlhttp.open("GET","Soal1.xml",true);
+				xmlhttp.send();
+			}
+	</script>
+	<title>Latihan AJAX.html</title>
+</head>
+<body>
+<div id="nama"></div>
+<div id="nim"></div>
+<div id="kelas">
+
+</div>
+<button type="button" onclick="loadXMLDoc()">Ubah Tulisan di atas</button>
+</body>
+</html>
